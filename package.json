@@ -1,0 +1,62 @@
+{
+  "name": "stylelint-config-meetic",
+  "version": "0.0.1",
+  "description": "CSS Stylelint configuration at Meetic",
+  "main": "./lib/index.js",
+  "scripts": {
+    "ava": "ava",
+    "lint-js": "node_modules/.bin/eslint src/**/*.js",
+    "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
+    "test": "npm run lint-js && npm run ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Meetic/stylelint-config-meetic.git"
+  },
+  "contributors": [
+    {
+      "name": "Alexandre Barbier",
+      "url": "https://github.com/Alex-Barbier"
+    },
+    {
+      "name": "Antoine Jackson",
+      "url": "https://github.com/william26"
+    },
+    {
+      "name": "Benjamin Delamarre",
+      "url": "https://github.com/d34thwings"
+    },
+    {
+      "name": "Oleg Sklyanchuk",
+      "url": "https://github.com/olegskl"
+    }
+  ],
+  "keywords": [
+    "stylelint-config",
+    "stylelint",
+    "stylelintconfig",
+    "style checker",
+    "style linter",
+    "code checker",
+    "code linter",
+    "code standards",
+    "code style",
+    "lint",
+    "css",
+    "meetic"
+  ],
+  "author": "Meetic",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "sindresorhus/ava#65ae07c",
+    "babel": "6.3.13",
+    "babel-cli": "6.3.17",
+    "babel-core": "6.3.21",
+    "babel-eslint": "4.1.6",
+    "babel-preset-es2015": "6.3.13",
+    "babel-preset-stage-3": "6.3.13",
+    "eslint": "1.10.3",
+    "eslint-config-meetic": "0.1.1",
+    "stylelint": "3.1.4"
+  }
+}

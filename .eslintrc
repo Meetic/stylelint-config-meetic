@@ -1,0 +1,4 @@
+{
+  "engine": "babel-eslint",
+  "extends": "meetic"
+}

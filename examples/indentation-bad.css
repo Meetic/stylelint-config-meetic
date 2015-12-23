@@ -1,0 +1,13 @@
+/* Bad indentation */
+
+.foo {
+color: #f00;
+}
+
+.bar {
+   color: #f00;
+}
+
+.baz {
+    color: #f00;
+}
