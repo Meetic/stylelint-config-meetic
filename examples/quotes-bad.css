@@ -1,0 +1,7 @@
+/* Bad quotes: use single quotes instead */
+
+@import "foo";
+
+.foo {
+  content: "x";
+}
