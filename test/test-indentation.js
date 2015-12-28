@@ -4,6 +4,10 @@ import stylelint from 'stylelint';
 
 import stylelintConfigMeetic from '../src/index';
 
+//
+// Good indentation
+// --------------------
+
 test('good indentation', async t => {
   t.plan(1);
 
@@ -12,8 +16,12 @@ test('good indentation', async t => {
     config: stylelintConfigMeetic
   });
 
-  t.is(lintResults.errored, false);
+  t.false(lintResults.errored);
 });
+
+//
+// Bad indentation
+// --------------------
 
 test('bad indentation', async t => {
   t.plan(6);
