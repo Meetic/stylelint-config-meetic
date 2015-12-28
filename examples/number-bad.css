@@ -1,0 +1,17 @@
+/* Bad number */
+
+.foo {
+  line-height: .5; /* use a leading zero for fractional numbers less than 1 */
+}
+
+.bar {
+  top: 3.1234567px; /* number of decimal places is limited to 6 */
+}
+
+.baz {
+  top: 1.0px; /* no trailing zeros allowed */
+}
+
+.qux {
+  top: 0px; /* don't use units for zero lengths */
+}
