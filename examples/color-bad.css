@@ -1,0 +1,15 @@
+.foo {
+  color: #FFF; /* use lowercase for hex colors */
+}
+
+.bar {
+  color: #ffffff; ; /* use short notation for hex colors */
+}
+
+.baz {
+  color: #fffffz; /* invalid hex are disallowed */
+}
+
+.qux {
+  color: rebeccapurple; /* named color are disallowed */
+}
