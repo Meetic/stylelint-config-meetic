@@ -24,7 +24,7 @@ test('bad indentation', async t => {
   });
 
   const warnings = lintResults.results.filter(({source}) => {
-    return source.includes('examples/indentation-bad.css');
+    return source.includes('indentation-bad.css');
   })[0].warnings;
 
   warnings.forEach(({rule, severity}) => {
