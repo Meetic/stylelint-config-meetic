@@ -23,9 +23,10 @@ test('bad indentation', async t => {
     config: stylelintConfigMeetic
   });
 
-  const warnings = lintResults.results.filter(({source}) => {
-    return source.includes('indentation-bad.css');
-  })[0].warnings;
+  const warnings = lintResults
+    .results
+    .find(({source}) => source.includes('indentation-bad.css'))
+    .warnings;
 
   warnings.forEach(({rule, severity}) => {
     t.is(rule, 'indentation');
