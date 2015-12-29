@@ -1,0 +1,11 @@
+/* write all the values of the list on one line, separated by comma and whitespace after */
+.foo {
+  background-size: 0, 0;
+}
+
+/* write value list on several line, comma at the end of the line with no whitespace before */
+.bar {
+  background-size:
+    0,
+    0;
+}
