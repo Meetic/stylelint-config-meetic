@@ -1,0 +1,19 @@
+.foo {
+  background-size:
+    0
+    ,0; /* always use comma before the new line */
+}
+
+.bar {
+  background-size:
+    0
+    ,0; /* always use comma before the new line */
+}
+
+.baz {
+  background-size: 0,0; /* always use a space after comme on a single line */
+}
+
+qux {
+  background-size: 0 ,0; /* never use a single space before the commas of value lists */
+}
