@@ -1,0 +1,29 @@
+/* Bad block examples */
+
+/* there must always be a newline after the closing brace */
+.fooA {
+  color: #f00;
+} .fooB {
+  color: #00f;
+}
+
+/* there must always be a newline before the closing brace */
+.barA {
+  color: #f00; }
+
+/* there must always be a space after the closing brace on single line */
+.bazA { color: #f00; }.bazB { color: #f00; }
+
+/* there must always be a space before the closing brace on single line */
+.qux { color: #f00;}
+
+/* blocks must not be empty */
+.quux {}
+
+/* there must be a newline after { in multi-line blocks */
+.pony { color: #f00;
+}
+
+/* there must always be a space after { in single-line blocks */
+/* there must always be a space before { */
+.ponyA{color: #f00; }
