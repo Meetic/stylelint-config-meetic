@@ -1,92 +1,57 @@
 import test from 'ava';
 import 'babel-core/register';
-import stylelint from 'stylelint';
 
-import stylelintConfigMeetic from '../src/index';
+import fileLinter from './helpers/file-linter';
+import warningFinder from './helpers/warning-finder';
 
 //
-// Good
+// Good number
 // --------------------
 
 test('good number', async t => {
   t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/number-good.css',
-    config: stylelintConfigMeetic
-  });
+  const lintResults = await fileLinter('number-good.css');
 
   t.false(lintResults.errored);
 });
 
 //
-// Bad
+// Bad number
 // --------------------
 
 test('bad number – leading zero', async t => {
-  t.plan(2);
+  t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/number-bad.css',
-    config: stylelintConfigMeetic
-  });
+  const warningList = await warningFinder('number-bad.css', 4);
+  const warning = warningList.find(warning => warning.rule === 'number-leading-zero');
 
-  const warning = lintResults
-    .results
-    .find(({source}) => source.includes('number-bad.css'))
-    .warnings[0];
-
-  t.is(warning.rule, 'number-leading-zero');
   t.is(warning.severity, 'error');
 });
 
 test('bad number – max precision', async t => {
-  t.plan(2);
+  t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/number-bad.css',
-    config: stylelintConfigMeetic
-  });
+  const warningList = await warningFinder('number-bad.css', 8);
+  const warning = warningList.find(warning => warning.rule === 'number-max-precision');
 
-  const warning = lintResults
-    .results
-    .find(({source}) => source.includes('number-bad.css'))
-    .warnings[1];
-
-  t.is(warning.rule, 'number-max-precision');
   t.is(warning.severity, 'error');
 });
 
 test('bad number – trailing zero', async t => {
-  t.plan(2);
+  t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/number-bad.css',
-    config: stylelintConfigMeetic
-  });
+  const warningList = await warningFinder('number-bad.css', 12);
+  const warning = warningList.find(warning => warning.rule === 'number-no-trailing-zeros');
 
-  const warning = lintResults
-    .results
-    .find(({source}) => source.includes('number-bad.css'))
-    .warnings[2];
-
-  t.is(warning.rule, 'number-no-trailing-zeros');
   t.is(warning.severity, 'error');
 });
 
 test('bad number – zero length unit', async t => {
-  t.plan(2);
+  t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/number-bad.css',
-    config: stylelintConfigMeetic
-  });
+  const warningList = await warningFinder('number-bad.css', 16);
+  const warning = warningList.find(warning => warning.rule === 'number-zero-length-no-unit');
 
-  const warning = lintResults
-    .results
-    .find(({source}) => source.includes('number-bad.css'))
-    .warnings[3];
-
-  t.is(warning.rule, 'number-zero-length-no-unit');
   t.is(warning.severity, 'error');
 });
