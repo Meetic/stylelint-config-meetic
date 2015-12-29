@@ -1,0 +1,4 @@
+/* disallow vendor prefixes for properties */
+.foo {
+  transform: scale(1);
+}
