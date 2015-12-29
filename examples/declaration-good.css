@@ -1,0 +1,18 @@
+/* there must always be a newline after the colon if the declaration's value is multi-line */
+.baz {
+  box-shadow:
+    0 0 0 1rem #b68,
+    0 0 2rem 1rem #b68;
+}
+
+/* there must always be a single space after the colon if the declaration's value is single-line  */
+.qux {
+  box-shadow: 0 0 0 1rem #b68, 0 0 2rem 1rem #b68;
+}
+
+/* there must always be a single space after the colon if the declaration's value is single-line
+ there must never be whitespace before the colon 
+ disallow !important within declarations */
+.quux {
+  color: #b68;
+}

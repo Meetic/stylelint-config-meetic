@@ -1,0 +1,31 @@
+/* there must never be a whitespace after the bang */
+.foo {
+  color: #b68 ! important;
+}
+
+/* there must always be a whitespace before the bang */
+.bar {
+  color: #b68!important;
+}
+
+/* there must always be a newline after the colon if the declaration's value is multi-line */
+.baz {
+  box-shadow: 0 0 0 1px #b68,
+    0 0 2px 1px rgba(30, 140, 190, 0.8);
+}
+
+/* there must always be a single space after the colon if the declaration's value is single-line  */
+.qux {
+  color :#b68;
+  box-shadow:0 0 0 1px #b68, 0 0 2px 1px rgba(30, 140, 190, 0.8);
+}
+
+/* there must never be whitespace before the colon */
+.quux {
+  color : #b68;
+}
+
+/* disallow !important within declarations */
+.pony {
+  color :#b68 !important;
+}
