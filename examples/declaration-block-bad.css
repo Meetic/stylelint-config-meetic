@@ -1,0 +1,22 @@
+/* disallow single-line declaration blocks */
+.foo { color: #b68; }
+
+/* there must always be a newline after the semicolon */
+.bar { color: #b68; background: #c79; }
+
+/* there must never be whitespace before the semicolons in multi-line rules */
+.baz { 
+  color: #b68
+  ; background: #c79;
+}
+
+/* there must always be a single space after the semicolon in single-line declaration blocks */
+.qux { color: #b68;background: #c79; }
+
+/* there must never be whitespace before the semicolons */
+.quux { 
+  color: #b68 ;
+}
+
+/* the number of declaration within a single line declaration block is limited to 1 */
+.pony { color: #b68; background: #c79; }
