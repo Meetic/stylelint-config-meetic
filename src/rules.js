@@ -38,12 +38,12 @@ export default {
 
   'function-blacklist': [], // a blacklist of disallowed functions
   'function-calc-no-unspaced-operator': true, // disallow an unspaced operator within calc functions
-  'function-comma-newline-after': 'never-multi-line', // no whitespace before the commas in multi-line functions
+  'function-comma-newline-after': 'always-multi-line', // require a newline after commas in multi-line functions
   'function-comma-newline-before': 'never-multi-line', // no whitespace before the commas in multi-line functions
-  'function-comma-space-after': 'always', // there must always be a single space after the commas
-  'function-comma-space-before': 'never', // there must never be whitespace before the commas
+  'function-comma-space-after': 'always-single-line', // there must always be a single space after the commas
+  'function-comma-space-before': 'never-single-line', // there must never be whitespace before the commas
   'function-linear-gradient-no-nonstandard-direction': true, // disallow non-standard direction in linear-gradient()
-  'function-parentheses-newline-inside': 'never-multi-line', // disallow whitespace on the inside of the parentheses
+  'function-parentheses-newline-inside': 'always-multi-line', // disallow whitespace on the inside of the parentheses
   'function-parentheses-space-inside': 'never', // there must never be whitespace on the inside the parentheses
   'function-url-quotes': 'single', // there must always be single quotes around url
   // 'function-whitelist': [], // a whitelist of only allowed functions

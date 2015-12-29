@@ -1,0 +1,25 @@
+/* Good function */
+
+.foo {
+  top: calc(1px + 2px); /* use spacing around operators in calc */
+}
+
+.bar {
+  transform: translate(1, 1); /* use single-line functions */
+}
+
+.baz {
+  transform: translate(1, 1); /* no space between function parentheses */
+}
+
+.qux {
+  transform: translate(1, 1) rotate(30deg); /* add a space between functions */
+}
+
+.quux {
+  background: linear-gradient(to top, #fff, #000); /* use standard gradient */
+}
+
+.pony {
+  background: url('x.jpg'); /* use single quotes */
+}

@@ -1,35 +1,39 @@
 import test from 'ava';
 import 'babel-core/register';
-import stylelint from 'stylelint';
 
-import stylelintConfigMeetic from '../src/index';
+import fileLinter from './helpers/file-linter';
+import warningFinder from './helpers/warning-finder';
+
+//
+// Good quotes
+// --------------------
 
 test('good quotes', async t => {
   t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/quotes-good.css',
-    config: stylelintConfigMeetic
-  });
+  const lintResults = await fileLinter('quotes-good.css');
 
-  t.is(lintResults.errored, false);
+  t.false(lintResults.errored);
 });
 
-test('bad quotes', async t => {
-  t.plan(4);
+//
+// Bad quotes
+// --------------------
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/quotes-bad.css',
-    config: stylelintConfigMeetic
-  });
+test('bad quotes – @import statements', async t => {
+  t.plan(1);
 
-  const warnings = lintResults
-    .results
-    .find(({source}) => source.includes('quotes-bad.css'))
-    .warnings;
+  const warningList = await warningFinder('quotes-bad.css', 3);
+  const warning = warningList.find(warning => warning.rule === 'string-quotes');
 
-  warnings.forEach(({rule, severity}) => {
-    t.is(rule, 'string-quotes');
-    t.is(severity, 'error');
-  });
+  t.is(warning.severity, 'error');
+});
+
+test('bad quotes – content', async t => {
+  t.plan(1);
+
+  const warningList = await warningFinder('quotes-bad.css', 6);
+  const warning = warningList.find(warning => warning.rule === 'string-quotes');
+
+  t.is(warning.severity, 'error');
 });

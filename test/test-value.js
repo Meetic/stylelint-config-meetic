@@ -1,8 +1,8 @@
 import test from 'ava';
 import 'babel-core/register';
-import stylelint from 'stylelint';
 
-import stylelintConfigMeetic from '../src/index';
+import fileLinter from './helpers/file-linter';
+import warningFinder from './helpers/warning-finder';
 
 //
 // Good value
@@ -11,10 +11,8 @@ import stylelintConfigMeetic from '../src/index';
 test('good value', async t => {
   t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/value-good.css',
-    config: stylelintConfigMeetic
-  });
+  const lintResults = await fileLinter('value-good.css');
+
   t.false(lintResults.errored);
 });
 
@@ -23,18 +21,10 @@ test('good value', async t => {
 // --------------------
 
 test('bad value', async t => {
-  t.plan(2);
+  t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/value-bad.css',
-    config: stylelintConfigMeetic
-  });
+  const warningList = await warningFinder('value-bad.css', 2);
+  const warning = warningList.find(warning => warning.rule === 'value-no-vendor-prefix');
 
-  const warnings = lintResults
-    .results
-    .find(({source}) => source.includes('value-bad.css'))
-    .warnings[0];
-
-    t.is(warnings.rule, 'value-no-vendor-prefix');
-    t.is(warnings.severity, 'error');
+  t.is(warning.severity, 'error');
 });

@@ -1,8 +1,8 @@
 import test from 'ava';
 import 'babel-core/register';
-import stylelint from 'stylelint';
 
-import stylelintConfigMeetic from '../src/index';
+import fileLinter from './helpers/file-linter';
+import warningFinder from './helpers/warning-finder';
 
 //
 // Good indentation
@@ -11,10 +11,7 @@ import stylelintConfigMeetic from '../src/index';
 test('good indentation', async t => {
   t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/indentation-good.css',
-    config: stylelintConfigMeetic
-  });
+  const lintResults = await fileLinter('indentation-good.css');
 
   t.false(lintResults.errored);
 });
@@ -23,21 +20,38 @@ test('good indentation', async t => {
 // Bad indentation
 // --------------------
 
-test('bad indentation', async t => {
-  t.plan(6);
+test('bad indentation – no indentation', async t => {
+  t.plan(1);
 
-  const lintResults = await stylelint.lint({
-    files: '../examples/indentation-bad.css',
-    config: stylelintConfigMeetic
-  });
+  const warningList = await warningFinder('indentation-bad.css', 4);
+  const warning = warningList.find(warning => warning.rule === 'indentation');
 
-  const warnings = lintResults
-    .results
-    .find(({source}) => source.includes('indentation-bad.css'))
-    .warnings;
+  t.is(warning.severity, 'error');
+});
 
-  warnings.forEach(({rule, severity}) => {
-    t.is(rule, 'indentation');
-    t.is(severity, 'error');
-  });
+test('bad indentation – 3 spaces', async t => {
+  t.plan(1);
+
+  const warningList = await warningFinder('indentation-bad.css', 8);
+  const warning = warningList.find(warning => warning.rule === 'indentation');
+
+  t.is(warning.severity, 'error');
+});
+
+test('bad indentation – no indentation', async t => {
+  t.plan(1);
+
+  const warningList = await warningFinder('indentation-bad.css', 4);
+  const warning = warningList.find(warning => warning.rule === 'indentation');
+
+  t.is(warning.severity, 'error');
+});
+
+test('bad indentation – 4 spaces', async t => {
+  t.plan(1);
+
+  const warningList = await warningFinder('indentation-bad.css', 12);
+  const warning = warningList.find(warning => warning.rule === 'indentation');
+
+  t.is(warning.severity, 'error');
 });
