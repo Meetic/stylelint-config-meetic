@@ -1,0 +1,14 @@
+/* disallow single-line declaration blocks */
+.foo {
+  color: #b68;
+}
+
+/* there must always be a newline after the semicolon
+   there must never be whitespace before the semicolons in multi-line rules
+   there must never be whitespace before the semicolons
+   the number of declaration within a single line declaration block is limited to 1
+*/
+.bar {
+  background: #c79;
+  color: #b68;
+}
