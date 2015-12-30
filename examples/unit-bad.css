@@ -1,0 +1,8 @@
+/* Bad unit examples */
+
+.foo {
+  margin-top: 1in; /* in is blacklisted */
+  margin-left: 1em; /* em is blacklisted */
+  padding: 1cm; /* cm is blacklisted */
+  width: 100mm; /* mm is blacklisted */
+}
