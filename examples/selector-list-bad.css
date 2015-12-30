@@ -1,0 +1,23 @@
+/* Bad selector list */
+
+/* there must always be a newline after the commas in multi-line selector lists */
+.fooA
+, .fooB {
+  color: #b68;
+}
+
+/* there must never be whitespace before the commas in multi-line selector lists */
+.barA ,
+.barB {
+  color: #b68;
+}
+
+/* there must always be a single space after the commas in single-line selector lists */
+.bazA,.bazB {
+  color: #b68;
+}
+
+/* there must never be whitespace before the commas */
+.quxA ,.quxB {
+  color: #b68;
+}
