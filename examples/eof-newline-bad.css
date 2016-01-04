@@ -1,0 +1,4 @@
+/* Disallow missing end-of-file newlines in non-empty files. */
+.foo {
+  color: #62f;
+}
