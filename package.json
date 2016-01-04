@@ -58,7 +58,7 @@
     "babel-preset-stage-3": "6.3.13",
     "eslint": "1.10.3",
     "eslint-config-meetic": "0.1.1",
-    "onchange": "^2.0.0",
+    "onchange": "2.0.0",
     "stylelint": "3.1.4"
   }
 }
