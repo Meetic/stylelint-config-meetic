@@ -1,0 +1,36 @@
+/* Bad media query list examples */
+
+@media screen and (color)
+, projection and (color) { /* add newline after comma */
+  .foo {
+    color: #62f;
+  }
+}
+
+@media screen and (color)
+,projection and (color) { /* add newline after comma */
+  .foo {
+    color: #62f;
+  }
+}
+
+/* add a space after comma */
+@media screen and (color),projection and (color) {
+  .foo {
+    color: #62f;
+  }
+}
+
+/* don't put spaces before comma */
+@media screen and (color) ,projection and (color) {
+  .foo {
+    color: #62f;
+  }
+}
+
+
+@media screen and (color)
+, /* don't put newlines before comma */
+projection and (color) {
+
+}
