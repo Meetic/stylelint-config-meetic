@@ -1,0 +1,11 @@
+/* Bad comment examples */
+
+.foo {
+  width: 2rem;
+}
+/* use new line needed before this comment */
+
+/*use spaces around this comment*/
+.bar {
+  width: 2rem;
+}

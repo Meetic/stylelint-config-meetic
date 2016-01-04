@@ -1,0 +1,41 @@
+/* Bad comment examples */
+
+.foo {
+  /* comment */
+  width: 2rem;
+}
+
+.har {
+  width: 2rem;
+}
+
+/* comment */
+
+.haz {
+  width: 2rem;
+  /* stylelint-disable color-no-hex */
+  height: 2rem;
+}
+
+/* comment */
+.bar {
+  width: 2rem;
+}
+
+/** comment **/
+.baz {
+  width: 2rem;
+}
+
+/**
+ * comment
+ */
+.qux {
+  width: 2rem;
+}
+
+/*     comment
+*/
+.quz {
+  width: 2rem;
+}
