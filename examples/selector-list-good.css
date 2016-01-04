@@ -1,0 +1,7 @@
+/* Good selector list */
+
+/* multi-line, no space before comma */
+.fooA,
+.fooB {
+  color: #b68;
+}
