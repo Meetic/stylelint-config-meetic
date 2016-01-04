@@ -1,0 +1,24 @@
+/* Good media feature */
+
+/* Require a single space after the colon in media features.
+   Disallow whitespace before the colon in media features. */
+@media (max-width: 600px) {
+  .foo {
+    color: #62f;
+  }
+}
+
+/* Disallow vendor prefixes for media feature names. */
+@media (min-resolution: 1dppx) {
+  .baz {
+    color: #62f;
+  }
+}
+
+/* There must always be a single space after the range operator.
+   There must always be a single space before the range operator. */
+@media (max-width >= 600px) {
+  .foo {
+    color: #62f;
+  }
+}
