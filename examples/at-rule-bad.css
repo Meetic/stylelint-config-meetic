@@ -1,0 +1,10 @@
+/* Bad at rule example */
+
+.bar {}
+@media {} /* add empty line before @rules */
+
+@-webkit-keyframes { /* don't use vendor prefixes for at rules */
+  .fooA {
+    color: #6fe;
+  }
+}

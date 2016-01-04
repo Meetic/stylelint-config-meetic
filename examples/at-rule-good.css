@@ -1,0 +1,48 @@
+/* Good at rule example */
+
+.foo {
+  color: #6fe;
+}
+
+@media {
+  .bar {
+    color: #6fe;
+  }
+}
+
+/* Blockless group */
+
+@import url('x.css');
+@import url('y.css');
+
+@media print {
+  .har {
+    color: #6fe;
+  }
+}
+
+
+/* First nested */
+
+.baz {
+  @extend foo;
+  color: #6fe;
+}
+
+.qux {
+  color: #6fe;
+
+  @extend foo;
+}
+
+/* No vendor prefixes */
+
+@keyframes {
+  .fooA {
+    color: #6fe;
+  }
+}
+
+@viewport {
+  orientation: landscape;
+}
