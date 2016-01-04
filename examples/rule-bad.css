@@ -1,0 +1,45 @@
+/* Bad rule */
+
+@media {
+  .foo1 {
+    color: #b68;
+  }
+  .foo2 { /* Leave one space for each rule after the first */
+    color: #b68;
+  }
+}
+
+.bar {
+  color: #b68;
+  color: #b67; /* Disallow duplicate properties within rules. */
+}
+
+.baz {
+  padding-left: 10rem;
+  padding: 20rem; /* Disallow shorthand properties that override related longhand properties. */
+}
+
+.qux1 {
+  color: #b68;
+}
+.qux2 {
+  color: #b68;
+}
+
+/* Specify the order of properties within rules. */
+.quux {
+  content: none;
+  color: #b68;
+  visibility: visible;
+  display: flex;
+  height: auto;
+  padding: inherit;
+  width: auto;
+  background: none;
+  margin: auto;
+}
+
+/* Require a trailing semicolon within rules. */
+.pony {
+  color: #b68
+}

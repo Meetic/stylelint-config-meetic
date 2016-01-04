@@ -1,0 +1,46 @@
+/* Good rule */
+
+@media {
+  .foo1 { /* No need to add new line for the first nested rule */
+    color: #b68;
+  }
+
+  .foo2 {
+    color: #b68;
+  }
+}
+
+.bar {
+  color: #b68; /* Disallow duplicate properties within rules. */
+}
+
+.baz {
+  padding: 20rem;
+  padding-left: 10rem; /* Disallow shorthand properties that override related longhand properties. */
+}
+
+.qux1 {
+  color: #b68;
+}
+
+.qux2 { /* Require an empty line before non-nested rules. */
+  color: #b68;
+}
+
+/* Specify the order of properties within rules. */
+.quux {
+  display: flex;
+  visibility: visible;
+  margin: auto;
+  background: none;
+  padding: inherit;
+  width: auto;
+  height: auto;
+  color: #b68;
+  content: none;
+}
+
+/* Require a trailing semicolon within rules. */
+.pony {
+  color: #b68;
+}
