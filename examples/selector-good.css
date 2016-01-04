@@ -1,0 +1,11 @@
+/* Good selector example */
+
+/* use only classes as selector, without combinator */
+.fooA, .fooB {
+  color: #b68;
+}
+
+/* use double colon for pseudo elements */
+.bar::before {
+  color: #b68;
+}

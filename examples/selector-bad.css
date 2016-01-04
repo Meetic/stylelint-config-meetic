@@ -1,0 +1,61 @@
+/* Bad selector example */
+
+/* there must always be a single space after the combinators */
+.fooA +.fooB {
+  color: #b68;
+}
+
+/* there must always be a single space before the combinators */
+.barA+ .barB {
+  color: #b68;
+}
+
+/* disallow attribute selectors */
+.baz[type="text"] {
+  color: #b68;
+}
+
+/* disallow combinators in selectors */
+.qux1 > .qux2 + .qux3 ~ .qux4 .qux5 {
+/**   ↑       ↑       ↑      ↑
+ * These are combinators */
+  color: #b68;
+}
+
+/* disallow id selectors */
+#quux {
+  color: #b68;
+}
+
+/* disallow type selectors */
+a {
+  color: #b68;
+}
+
+/* disallow universal selectors */
+    * {
+/** ↑
+ * This selector */
+  color: #b68;
+}
+
+/* disallow vendor prefixes for selectors */
+input::-moz-placeholder {
+/**          ↑
+ * These prefixes */
+  color: #b68;
+}
+
+/* specify double colon notation for applicable pseudo-elements */
+.pony:before {
+/**  ↑
+ * This notation */
+  color: #b68;
+}
+
+/* disallow the composition of:root selectors */
+.ponyy, :root {
+/** ↑   ↑
+ * This type of composite selector */
+  color: #b68;
+}
