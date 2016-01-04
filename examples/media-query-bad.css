@@ -1,0 +1,7 @@
+/* Bad media query examples */
+
+@media ( max-width: 300px ) { /* don't put spaces inside parentheses */
+  .foo {
+    color: #62f;
+  }
+}
