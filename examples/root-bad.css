@@ -1,0 +1,6 @@
+/* Bad root */
+
+/* Disallow standard properties inside :root selectors. */
+    :root { color: #333; }
+/**   ↑       ↑
+ * This selector and these types of standard properties */

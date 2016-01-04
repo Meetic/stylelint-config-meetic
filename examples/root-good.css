@@ -1,0 +1,6 @@
+/* Good root */
+
+/* Disallow standard properties inside :root selectors. */
+:root {
+  $my-sass-color: #333;
+}
