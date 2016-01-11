@@ -47,6 +47,9 @@
   ],
   "author": "Meetic",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Meetic/stylelint-config-meetic/issues"
+  },
   "devDependencies": {
     "ava": "^0.9.1",
     "babel": "^6.3.26",
