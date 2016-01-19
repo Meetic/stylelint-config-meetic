@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-meetic",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "CSS Stylelint configuration at Meetic",
   "main": "./lib/index.js",
   "scripts": {
