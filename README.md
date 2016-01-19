@@ -1,7 +1,8 @@
 # stylelint-config-meetic
 
 [![NPM version](http://img.shields.io/npm/v/stylelint-config-meetic.svg)](https://www.npmjs.org/package/stylelint-config-meetic)
-[![Build Status](https://travis-ci.org/meetic/stylelint-config-meetic.svg?branch=master)](https://travis-ci.org/meetic/stylelint-config-meetic)
+[![Build Status](https://travis-ci.org/Meetic/stylelint-config-meetic.svg?branch=master)](https://travis-ci.org/Meetic/stylelint-config-meetic)
+[![Code Climate](https://codeclimate.com/github/Meetic/stylelint-config-meetic/badges/gpa.svg)](https://codeclimate.com/github/Meetic/stylelint-config-meetic)
 
 A configurable [Stylelint](http://stylelint.io/) configuration used in [Meetic](https://github.com/Meetic) projects.
 
